@@ -4,6 +4,7 @@ import styles from "./UserInput.module.css";
 import ReactJsAlert from "reactjs-alert";
 import React, { useState } from "react";
 import ErrorModal from "../ErrorModal/ErrorModal";
+import Wrapper from "../Helpers/Wrapper";
 
 const UserInput = (props) => {
   const [status, setStatus] = useState(false);
@@ -54,7 +55,7 @@ const UserInput = (props) => {
   };
 
   return (
-    <Card className={styles.input}>
+    <Wrapper>
       {error && (
         <ErrorModal
           title={error.title}
@@ -62,30 +63,32 @@ const UserInput = (props) => {
           onConfirm={errorHandler}
         />
       )}
-      <form action="" onSubmit={userInputHandler}>
-        <label htmlFor="username">NAME</label>
-        <input
-          id="username"
-          type="text"
-          value={enteredUsername}
-          onChange={userNameChageHandler}
-        />
-        <label htmlFor="age">AGE</label>
-        <input
-          id="age"
-          type="number"
-          value={enteredAge}
-          onChange={ageChangeHandler}
-        />
-        <Button type="submit">BUTTON</Button>
-      </form>
-      <ReactJsAlert
-        status={status} // true or false
-        type={type} // success, warning, error, info
-        title={title}
-        Close={() => setStatus(false)}
-      ></ReactJsAlert>
-    </Card>
+      <Card className={styles.input}>
+        <form action="" onSubmit={userInputHandler}>
+          <label htmlFor="username">NAME</label>
+          <input
+            id="username"
+            type="text"
+            value={enteredUsername}
+            onChange={userNameChageHandler}
+          />
+          <label htmlFor="age">AGE</label>
+          <input
+            id="age"
+            type="number"
+            value={enteredAge}
+            onChange={ageChangeHandler}
+          />
+          <Button type="submit">BUTTON</Button>
+        </form>
+        <ReactJsAlert
+          status={status} // true or false
+          type={type} // success, warning, error, info
+          title={title}
+          Close={() => setStatus(false)}
+        ></ReactJsAlert>
+      </Card>
+    </Wrapper>
   );
 };
 
