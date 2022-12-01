@@ -55,7 +55,7 @@ const UserInput = (props) => {
   };
 
   return (
-    <Wrapper>
+    <React.Fragment>
       {error && (
         <ErrorModal
           title={error.title}
@@ -81,14 +81,14 @@ const UserInput = (props) => {
           />
           <Button type="submit">BUTTON</Button>
         </form>
-        <ReactJsAlert
-          status={status} // true or false
-          type={type} // success, warning, error, info
-          title={title}
-          Close={() => setStatus(false)}
-        ></ReactJsAlert>
       </Card>
-    </Wrapper>
+      <ReactJsAlert
+        status={status} // true or false
+        type={type} // success, warning, error, info
+        title={title}
+        Close={() => setStatus(false)}
+      ></ReactJsAlert>
+    </React.Fragment>
   );
 };
 

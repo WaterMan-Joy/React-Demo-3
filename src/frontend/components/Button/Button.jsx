@@ -1,8 +1,9 @@
+import Wrapper from "../Helpers/Wrapper";
 import styles from "./Button.module.css";
 
 const Button = (props) => {
   return (
-    <div>
+    <Wrapper>
       <button
         className={styles.button}
         type={props.type || "button"}
@@ -10,7 +11,7 @@ const Button = (props) => {
       >
         {props.children}
       </button>
-    </div>
+    </Wrapper>
   );
 };
 
