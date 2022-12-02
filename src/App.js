@@ -1,6 +1,6 @@
 import styles from "./App.module.css";
 import UserInputList from "./frontend/components/UserInputList/UserInputList";
-import UserInput from "./frontend/components/UsersInput/UserInput";
+import AddUser from "./frontend/components/AddUser/AddUser";
 import React, { useState } from "react";
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
   return (
     <div className={styles.App}>
       <h1>Home</h1>
-      <UserInput onAddUser={addUserHandler}></UserInput>
+      <AddUser onAddUser={addUserHandler}></AddUser>
       <UserInputList users={userList} />
     </div>
   );
