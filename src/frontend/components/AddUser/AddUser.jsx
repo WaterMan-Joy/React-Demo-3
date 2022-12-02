@@ -20,6 +20,7 @@ const AddUser = (props) => {
 
   const userInputHandler = (event) => {
     event.preventDefault();
+    console.log(nameInputRef.current.value);
     const enterName = ageInputRef.current.value;
     const enterAge = ageInputRef.current.value;
     // setEnteredUsername(event.target.value);
